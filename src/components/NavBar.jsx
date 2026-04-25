@@ -80,7 +80,7 @@ const NavBar = () => {
           className={`absolute block xl:hidden top-16 left-0 z-10 bg-blue-500 h-60 transition-all ease-in duration-150 ${menu}`}
         >
           <ul className="flex flex-col">
-            <li>
+            <li onClick={() => setMenu("hidden")}>
               <NavLink
                 to="/"
                 className="block p-4 w-44 font-semibold hover:border-b-2 transition-all ease-in duration-100"
@@ -88,7 +88,7 @@ const NavBar = () => {
                 <i className="fa-solid fa-house"></i>
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setMenu("hidden")}>
               <NavLink
                 to="/collection"
                 className="block p-4 w-44 font-semibold hover:border-b-2 transition-all ease-in duration-100"
@@ -96,7 +96,7 @@ const NavBar = () => {
                 COLLECTION
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setMenu("hidden")}>
               <NavLink
                 to="/about"
                 className="block p-4 w-44 font-semibold hover:border-b-2 transition-all ease-in duration-100"
@@ -104,7 +104,7 @@ const NavBar = () => {
                 ABOUT
               </NavLink>
             </li>
-            <li>
+            <li onClick={() => setMenu("hidden")}>
               <NavLink
                 to="/contact"
                 className="block p-4 w-44 font-semibold hover:border-b-2 transition-all ease-in duration-100"
