@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const NavBar = () => {
   const { showSearch, setShowSearch, search, setSearch } = useGlobalContext();
   const { pathname } = useLocation();
-  const [menu, setMenu] = useState("opacity-0");
+  const [menu, setMenu] = useState("hidden");
   const showSearchBtn = pathname === "/collection";
   const inputSearch = useRef(null);
   useEffect(() => {
@@ -28,7 +28,7 @@ const NavBar = () => {
         <button
           className="block xl:hidden cursor-pointer"
           onClick={() =>
-            menu === "opacity-0" ? setMenu("opacity-100") : setMenu("opacity-0")
+            menu === "hidden" ? setMenu("flex") : setMenu("hidden")
           }
         >
           <i className="fa-solid fa-ellipsis text-2xl"></i>
