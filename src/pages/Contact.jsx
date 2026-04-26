@@ -7,13 +7,18 @@ const Contact = () => {
   const [last, setLast] = useState("");
   const [mail, setMail] = useState("");
   const [desc, setDesc] = useState("");
+  // const [alert,setAlert]
   const firstInput = useRef(null);
   const handlSubmit = () => {
-    setFirst("");
-    setLast("");
-    setMail("");
-    setDesc("");
-    firstInput.current.focus();
+    if (first && last && mail && desc) {
+      setFirst("");
+      setLast("");
+      setMail("");
+      setDesc("");
+      firstInput.current.focus();
+    } else {
+      alert("Enter Infomation befor submit");
+    }
   };
   return (
     <div className="w-[80vw] m-auto grid grid-rows-2 xl:grid-cols-2 mt-25 gap-7 xl:gap-7">

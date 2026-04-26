@@ -77,7 +77,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div
-          className={`absolute block xl:hidden top-16 left-0 z-10 bg-blue-500 h-60 transition-all ease-in duration-150 ${menu}`}
+          className={`absolute block xl:hidden top-16 left-0 z-10 bg-orange-400 h-60 transition-all ease-in duration-150 ${menu}`}
         >
           <ul className="flex flex-col">
             <li onClick={() => setMenu("hidden")}>
@@ -123,9 +123,12 @@ const NavBar = () => {
               <i className="fa-solid fa-magnifying-glass"></i>
             ) : null}
           </button>
-          <button className="px-2 py-4 md:px-4 cursor-pointer hover:scale-[1.2]">
-            <i className="fa-regular fa-user"></i>
-          </button>
+          <Link to="/login">
+            <button className="px-2 py-4 md:px-4 cursor-pointer hover:scale-[1.2]">
+              <i className="fa-regular fa-user"></i>
+            </button>
+          </Link>
+
           <div className="px-2 py-4 md:px-4 cursor-pointer hover:scale-[1.2] relative">
             <button>
               <i className="fa-solid fa-bag-shopping"></i>

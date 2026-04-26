@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProductDetail from "./components/ProductDetail";
 import ScrollToTop from "./ScrollTop";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/collection/:id" element={<ProductDetail />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/login" element={<Login />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
