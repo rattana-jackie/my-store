@@ -140,25 +140,27 @@ const NavBar = () => {
         </div>
       </nav>
 
-      <div
-        className={` pt-5 w-full mt-5 justify-center gap-2 border-b pb-2  bg-slate-50 ${showSearch}`}
-      >
-        <input
-          type="text"
-          placeholder="Search filter..."
-          className="text-xl border p-2 outline-0 w-1/2"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-          autoFocus
-          ref={inputSearch}
-        />
-        <button
-          className="text-2xl cursor-pointer hover:text-orange-700"
-          onClick={handleCloseSearch}
+      {showSearchBtn ? (
+        <div
+          className={` pt-5 w-full mt-5 justify-center gap-2 border-b pb-2  bg-slate-50 ${showSearch}`}
         >
-          <i className="fa-solid fa-circle-xmark"></i>
-        </button>
-      </div>
+          <input
+            type="text"
+            placeholder="Search filter..."
+            className="text-xl border p-2 outline-0 w-1/2"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+            autoFocus
+            ref={inputSearch}
+          />
+          <button
+            className="text-2xl cursor-pointer hover:text-orange-700"
+            onClick={handleCloseSearch}
+          >
+            <i className="fa-solid fa-circle-xmark"></i>
+          </button>
+        </div>
+      ) : null}
     </>
   );
 };
