@@ -3,7 +3,8 @@ import { useGlobalContext } from "../context/ProductContext";
 import { useEffect, useRef, useState } from "react";
 
 const NavBar = () => {
-  const { showSearch, setShowSearch, search, setSearch } = useGlobalContext();
+  const { showSearch, setShowSearch, search, setSearch, cartNum } =
+    useGlobalContext();
   const { pathname } = useLocation();
   const [menu, setMenu] = useState("hidden");
   const showSearchBtn = pathname === "/collection";
@@ -134,7 +135,7 @@ const NavBar = () => {
               <i className="fa-solid fa-bag-shopping"></i>
             </button>
             <span className="absolute bottom-3 right-3 text-center text-white text-[10px] w-4 h-4 bg-red-500 p-0.5 rounded-full">
-              0
+              {cartNum}
             </span>
           </div>
         </div>

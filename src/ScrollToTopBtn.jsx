@@ -20,7 +20,7 @@ const ScrollToTopBtn = () => {
       {showBtn && (
         <button
           onClick={handleScroll}
-          className="bg-green-700 w-12.5 h-12.5 rounded-full text-white text-center fixed bottom-10 right-10 active:scale-[1.04] ease-in duration-100"
+          className="bg-orange-400 w-12.5 h-12.5 rounded-full text-white text-center fixed bottom-10 right-10 z-50 active:scale-[1.04] ease-in duration-100"
         >
           <i className="fa-solid fa-angles-up"></i>
         </button>

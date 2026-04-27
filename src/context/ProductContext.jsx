@@ -13,6 +13,7 @@ const ProductContext = ({ children }) => {
   const [search, setSearch] = useState("");
   const [showForget, setShowForget] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
+  const [cartNum, setCartNum] = useState(0);
 
   const value = {
     data,
@@ -30,6 +31,8 @@ const ProductContext = ({ children }) => {
     setShowForget,
     showCreate,
     setShowCreate,
+    cartNum,
+    setCartNum,
   };
 
   useEffect(() => {

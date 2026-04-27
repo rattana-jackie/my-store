@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import useProductDetail from "../hook/useProductDetail";
 import StarRating from "./StarRating";
 import { useTitle } from "../hook/useTitle";
+import { useGlobalContext } from "../context/ProductContext";
 
 const ProductDetail = () => {
+  const { cartNum, setCartNum } = useGlobalContext();
   const { product } = useProductDetail();
   const [cartVal, setCartVal] = useState(0);
   useTitle(`My Store | ${product.title}`);
-
+  useEffect(() => {
+    setCartNum(cartVal);
+  }, [cartVal]);
   return (
     <div className="md:w-[80vw] m-auto">
       <div className="bg-slate-100 p-3 flex flex-wrap">
