@@ -18,6 +18,7 @@ const Contact = () => {
       firstInput.current.focus();
     } else {
       alert("Enter Infomation befor submit");
+      firstInput.current.focus();
     }
   };
   return (

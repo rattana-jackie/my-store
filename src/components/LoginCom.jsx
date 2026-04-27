@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import ForgetPassword from "./ForgetPassword";
 import { useGlobalContext } from "../context/ProductContext";
+import CreateAcc from "./CreateAcc";
 
 const LoginCom = () => {
   const userName = useRef(null);
   const password = useRef(null);
-  const { showForget, setShowForget } = useGlobalContext();
+  const { showForget, setShowForget, showCreate, setShowCreate } =
+    useGlobalContext();
   const handleSubmit = () => {
     userName.current.value = "";
     password.current.value = "";
@@ -15,6 +17,7 @@ const LoginCom = () => {
   return (
     <>
       {showForget ? <ForgetPassword /> : null}
+      {showCreate ? <CreateAcc /> : null}
       <div className="w-[80vw] m-auto mt-12 xl:mt-25">
         <div className="flex flex-col w-full md:w-1/2 m-auto justify-center items-center shadow-2xl p-5">
           <div className="flex flex-col w-full gap-3 items-center">
@@ -54,7 +57,10 @@ const LoginCom = () => {
           </div>
           <p>
             Don't have account?
-            <span className="text-blue-500 font-bold cursor-pointer">
+            <span
+              className="text-blue-500 font-bold cursor-pointer"
+              onClick={() => setShowCreate(true)}
+            >
               Create
             </span>
           </p>

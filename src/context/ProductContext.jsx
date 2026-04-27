@@ -12,6 +12,7 @@ const ProductContext = ({ children }) => {
   const [showSearch, setShowSearch] = useState("hidden");
   const [search, setSearch] = useState("");
   const [showForget, setShowForget] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
 
   const value = {
     data,
@@ -27,6 +28,8 @@ const ProductContext = ({ children }) => {
     setIsLoading,
     showForget,
     setShowForget,
+    showCreate,
+    setShowCreate,
   };
 
   useEffect(() => {

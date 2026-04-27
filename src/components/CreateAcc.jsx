@@ -1,23 +1,23 @@
 import { useRef } from "react";
 import { useGlobalContext } from "../context/ProductContext";
 
-const ForgetPassword = () => {
-  const { showForget, setShowForget } = useGlobalContext();
+const CreateAcc = () => {
+  const { showCreate, setShowCreate } = useGlobalContext();
   const mail = useRef(null);
-  const oldPass = useRef(null);
-  const newPass = useRef(null);
+  const username = useRef(null);
+  const pass = useRef(null);
   const handleClose = (e) => {
-    e.target.classList.contains("forget-container")
-      ? setShowForget(false)
+    e.target.classList.contains("create-container")
+      ? setShowCreate(false)
       : null;
   };
-  const handleVerify = () => {
-    if (mail.current.value && oldPass.current.value && newPass.current.value) {
+  const handleCreate = () => {
+    if (mail.current.value && username.current.value && pass.current.value) {
       mail.current.value = "";
-      oldPass.current.value = "";
-      newPass.current.value = "";
+      username.current.value = "";
+      pass.current.value = "";
       mail.current.focus();
-      setShowForget(false);
+      setShowCreate(false);
     } else {
       alert("Provide information");
       mail.current.focus();
@@ -25,7 +25,7 @@ const ForgetPassword = () => {
   };
   return (
     <div
-      className="forget-container fixed top-0 left-0 z-50 w-screen h-screen bg-[rgba(0,0,0,0.54)]"
+      className="create-container fixed top-0 left-0 z-50 w-screen h-screen bg-[rgba(0,0,0,0.54)]"
       onClick={(e) => handleClose(e)}
     >
       <div className="mt-25 md:mt-52 bg-white w-[90vw] md:w-[50vw] m-auto border flex flex-col p-4 gap-5">
@@ -38,26 +38,26 @@ const ForgetPassword = () => {
           ref={mail}
         />
         <input
-          type="password"
-          placeholder="Your old password"
+          type="text"
+          placeholder="username"
           className="p-3 border rounded-sm outline-0"
-          ref={oldPass}
+          ref={username}
         />
         <input
           type="password"
-          placeholder="Your new password"
+          placeholder="Your old password"
           className="p-3 border rounded-sm outline-0"
-          ref={newPass}
+          ref={pass}
         />
         <button
           className="bg-green-600 py-5 cursor-pointer text-white rounded-sm"
-          onClick={handleVerify}
+          onClick={handleCreate}
         >
-          Verify
+          Create
         </button>
       </div>
     </div>
   );
 };
 
-export default ForgetPassword;
+export default CreateAcc;
