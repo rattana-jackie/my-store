@@ -11,6 +11,7 @@ const ProductContext = ({ children }) => {
   const [sort, setSort] = useState("");
   const [showSearch, setShowSearch] = useState("hidden");
   const [search, setSearch] = useState("");
+  const [showForget, setShowForget] = useState(false);
 
   const value = {
     data,
@@ -24,6 +25,8 @@ const ProductContext = ({ children }) => {
     setSearch,
     isLoading,
     setIsLoading,
+    showForget,
+    setShowForget,
   };
 
   useEffect(() => {

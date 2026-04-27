@@ -23,7 +23,7 @@ const About = () => {
         </div>
       </div>
       <div className="grid grid-rows-3 xl:grid-cols-3">
-        <div className=" bg-sky-200 flex justify-center items-center md:py-23">
+        <div className=" bg-sky-200 flex justify-center items-center md:py-23 overflow-hidden">
           <p className="text-7xl text-center -rotate-90 md:rotate-0 xl:text-left xl:text-9xl uppercase font-bold text-sky-300">
             About us
           </p>
