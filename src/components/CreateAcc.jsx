@@ -45,7 +45,7 @@ const CreateAcc = () => {
         />
         <input
           type="password"
-          placeholder="Your old password"
+          placeholder="Your password"
           className="p-3 border rounded-sm outline-0"
           ref={pass}
         />

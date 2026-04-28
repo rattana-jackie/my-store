@@ -6,6 +6,7 @@ const ForgetPassword = () => {
   const mail = useRef(null);
   const oldPass = useRef(null);
   const newPass = useRef(null);
+
   const handleClose = (e) => {
     e.target.classList.contains("forget-container")
       ? setShowForget(false)
