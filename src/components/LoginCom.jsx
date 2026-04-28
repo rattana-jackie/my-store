@@ -8,6 +8,7 @@ const LoginCom = () => {
   const password = useRef(null);
   const { showForget, setShowForget, showCreate, setShowCreate } =
     useGlobalContext();
+  const [showPass, setShowPass] = useState("password");
   const handleSubmit = () => {
     userName.current.value = "";
     password.current.value = "";
@@ -29,14 +30,21 @@ const LoginCom = () => {
               autoFocus
               ref={userName}
             />
-            <div className="flex flex-col w-full gap-3">
+            <div className="flex flex-col w-full gap-3 relative">
               <input
-                type="password"
                 placeholder="Enter password"
                 className="border p-2 outline-0 rounded-sm"
                 ref={password}
+                type={showPass}
               />
-              <p>show</p>
+              <p className="absolute top-1/2 right-1 -translate-1/2">
+                <i
+                  className="fa-solid fa-eye"
+                  onClick={() =>
+                    setShowPass(showPass === "password" ? "text" : "password")
+                  }
+                ></i>
+              </p>
             </div>
             <p
               className="text-orange-400 font-semibold cursor-pointer"
