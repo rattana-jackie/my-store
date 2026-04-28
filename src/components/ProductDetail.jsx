@@ -6,13 +6,34 @@ import { useTitle } from "../hook/useTitle";
 import { useGlobalContext } from "../context/ProductContext";
 
 const ProductDetail = () => {
-  const { cartNum, setCartNum } = useGlobalContext();
+  const { cartNum, setCartNum, cartData, setCartData } = useGlobalContext();
   const { product } = useProductDetail();
   const [cartVal, setCartVal] = useState(0);
+
   useTitle(`My Store | ${product.title}`);
-  useEffect(() => {
-    setCartNum(cartVal);
-  }, [cartVal]);
+
+  const handleAddtoCart = () => {
+    setCartNum(cartNum + cartVal);
+
+    if (cartVal > 0) {
+      setCartData((prev) => {
+        const exist = prev.find((item) => item.id === product.id);
+
+        if (exist) {
+          // បើមានរួច → បន្ថែម qty
+          return prev.map((item) =>
+            item.id === product.id
+              ? { ...item, qty: item.qty + cartVal }
+              : item,
+          );
+        }
+
+        // បើមិនទាន់មាន → add ថ្មី
+        return [...prev, { ...product, qty: cartVal }];
+      });
+    } else null;
+  };
+
   return (
     <div className="md:w-[80vw] m-auto">
       <div className="bg-slate-100 p-3 flex flex-wrap">
@@ -59,7 +80,10 @@ const ProductDetail = () => {
               <i className="fas fa-plus"></i>
             </button>
           </div>
-          <button className="w-48 p-3 bg-black text-xl text-white cursor-pointer">
+          <button
+            className="w-48 p-3 bg-black text-xl text-white cursor-pointer"
+            onClick={handleAddtoCart}
+          >
             Add to Cart
           </button>
           <button className="w-48 p-3 bg-orange-600 text-xl text-white cursor-pointer">

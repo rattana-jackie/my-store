@@ -14,6 +14,7 @@ const ProductContext = ({ children }) => {
   const [showForget, setShowForget] = useState(false);
   const [showCreate, setShowCreate] = useState(false);
   const [cartNum, setCartNum] = useState(0);
+  const [cartData, setCartData] = useState([]);
 
   const value = {
     data,
@@ -33,6 +34,8 @@ const ProductContext = ({ children }) => {
     setShowCreate,
     cartNum,
     setCartNum,
+    cartData,
+    setCartData,
   };
 
   useEffect(() => {

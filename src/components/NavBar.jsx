@@ -129,15 +129,16 @@ const NavBar = () => {
               <i className="fa-regular fa-user"></i>
             </button>
           </Link>
-
-          <div className="px-2 py-4 md:px-4 cursor-pointer hover:scale-[1.2] relative">
-            <button>
-              <i className="fa-solid fa-bag-shopping"></i>
-            </button>
-            <span className="absolute bottom-3 right-3 text-center text-white text-[10px] w-4 h-4 bg-red-500 p-0.5 rounded-full">
-              {cartNum}
-            </span>
-          </div>
+          <Link to="/cart">
+            <div className="px-2 py-4 md:px-4 cursor-pointer hover:scale-[1.2] relative">
+              <button>
+                <i className="fa-solid fa-bag-shopping"></i>
+              </button>
+              <span className="absolute bottom-3 right-3 text-center text-white text-[10px] w-4 h-4 bg-red-500 p-0.5 rounded-full">
+                {cartNum}
+              </span>
+            </div>
+          </Link>
         </div>
       </nav>
 

@@ -13,3 +13,13 @@
   cursor: pointer;
   text-transform: uppercase;
 }
+table,
+tbody,
+td,
+tr,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
